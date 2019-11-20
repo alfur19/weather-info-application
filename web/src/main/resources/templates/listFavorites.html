@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Spring Security Example </title>
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header"/>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Favorite City</th>
+        <th scope="col">Remove</th>
+        <th scope="col">Trigger Search</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="model : ${@userInfo.getFavoriteCities()}" >
+        <td th:text="${model.name}"/>
+        <td><a th:href="@{'/removeFavorite?city=' + ${model.name}}">Remove</a></td>
+        <td><a th:href="@{'/forecast?city=' + ${model.name}}">Trigger Search</a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
