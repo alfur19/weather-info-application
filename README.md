@@ -1,4 +1,4 @@
-# Spring Boot Example
+# Weather Info Application
 
 Short description
 -------------------------------
